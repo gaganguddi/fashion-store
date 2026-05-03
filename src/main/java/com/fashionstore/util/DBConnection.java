@@ -5,17 +5,21 @@ import java.sql.DriverManager;
 
 public class DBConnection {
 
-    private static final String URL =
-        "jdbc:mysql://tramway.proxy.rlwy.net:38862/railway?useSSL=true&requireSSL=true&verifyServerCertificate=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-
-    private static final String USER = "root";
-    private static final String PASSWORD = "waBNmOFhFnYTBXVXGVyuZaEqfYiCEBgp";
-
     public static Connection getConnection() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
 
-            Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+        try {
+            System.out.println("Trying DB connection...");
+
+            String host = System.getenv("MYSQLHOST");
+            String port = System.getenv("MYSQLPORT");
+            String database = System.getenv("MYSQLDATABASE");
+            String user = System.getenv("MYSQLUSER");
+            String password = System.getenv("MYSQLPASSWORD");
+
+            String url = "jdbc:mysql://" + host + ":" + port + "/" + database +
+                    "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+
+            Connection conn = DriverManager.getConnection(url, user, password);
 
             if (conn != null) {
                 System.out.println("✅ DB CONNECTED SUCCESSFULLY (RENDER)");
