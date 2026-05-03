@@ -1,0 +1,69 @@
+
+.auth-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1433 0%, #2d1f5e 50%, #1e1433 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.auth-page::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,107,157,0.2) 0%, transparent 60%);
+}
+.auth-page::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(106,92,255,0.25) 0%, transparent 60%);
+}
+.auth-box {
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.35);
+  position: relative;
+  z-index: 2;
+}
+.auth-logo { text-align: center; margin-bottom: 28px; }
+.auth-logo span { font-size: 36px; }
+.auth-logo h2 { font-size: 26px; font-weight: 900; color: var(--text); margin-top: 8px; }
+.auth-logo p { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+.auth-submit {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(106,92,255,0.4);
+  margin-top: 6px;
+}
+.auth-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(106,92,255,0.5); }
+.auth-footer { text-align: center; margin-top: 20px; font-size: 14px; color: var(--text-muted); }
+.auth-footer a { color: var(--primary); font-weight: 600; }
+.auth-divider {
+  display: flex; align-items: center; gap: 12px;
+  margin: 18px 0;
+  color: var(--text-muted); font-size: 12px;
+}
+.auth-divider::before, .auth-divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
