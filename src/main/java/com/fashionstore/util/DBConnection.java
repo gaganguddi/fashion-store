@@ -11,13 +11,14 @@ public class DBConnection {
             // Load the driver explicitly for Tomcat/Render environments
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String host = System.getenv("MYSQLHOST");
-            String port = System.getenv("MYSQLPORT");
-            String database = System.getenv("MYSQLDATABASE");
-            String user = System.getenv("MYSQLUSER");
-            String password = System.getenv("MYSQLPASSWORD");
+            String host = System.getenv("MYSQLHOST") != null ? System.getenv("MYSQLHOST").trim() : null;
+            String port = System.getenv("MYSQLPORT") != null ? System.getenv("MYSQLPORT").trim() : null;
+            String database = System.getenv("MYSQLDATABASE") != null ? System.getenv("MYSQLDATABASE").trim() : null;
+            String user = System.getenv("MYSQLUSER") != null ? System.getenv("MYSQLUSER").trim() : null;
+            String password = System.getenv("MYSQLPASSWORD") != null ? System.getenv("MYSQLPASSWORD").trim() : null;
 
-            System.out.println("DEBUG: Connecting to DB at " + host + ":" + port + "/" + database);
+            System.out.println("DEBUG: Connecting to DB at " + host + ":" + port + "/" + database + " with user: " + user);
+
 
             if (host == null || port == null || database == null) {
                 System.out.println("❌ ERROR: Missing database environment variables!");
