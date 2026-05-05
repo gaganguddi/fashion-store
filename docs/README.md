@@ -9,3 +9,5 @@ Jakarta Servlet 6 + JSP, Java 21, JDBC to MySQL (`fashion_store`). Docs are kept
 | [controllers-and-daos.md](./controllers-and-daos.md) | URL → servlet → DAO matrix and dependency graphs |
 
 Diagrams use [Mermaid](https://mermaid.js.org/) (GitHub, many IDEs, and VS Code Markdown preview).
+
+Database Doc - https://drive.google.com/drive/folders/1VQJRak9NlPmjPNqD2eqR4HiGQQ3wNiyk?usp=sharing
