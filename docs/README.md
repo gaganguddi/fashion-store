@@ -1,6 +1,7 @@
 # FashionStore — technical documentation
 
 Jakarta Servlet 6 + JSP, Java 21, JDBC to MySQL (`fashion_store`). Docs are kept in sync with `src/main/java` and DAO SQL.
+Demo live link: https://fashion-store-p5lw.onrender.com/home
 
 | Document | Contents |
 |----------|----------|
